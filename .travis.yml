@@ -1,6 +1,6 @@
-# language: rust
-# rust:
-#   - stable
+language: rust
+rust:
+  - stable
 env:
   - MINICONDA_VERSION=4.7.10 RUST_VERSION=stable
 cache:
@@ -8,6 +8,8 @@ cache:
   pip: true
   directories:
     - ${TRAVIS_HOME}/miniconda3-${MINICONDA_VERSION}
+    # - ${TRAVIS_HOME}/.cargo
+    # - ${TRAVIS_BUILD_DIR}/target
 install:
   - source .travis/install-dependencies-linux_x86_64.sh
 script:
