@@ -6,9 +6,9 @@ export PATH=${TRAVIS_HOME}/miniconda3-${MINICONDA_VERSION}/bin:$PATH
 
 ##########################
 # INSTALL MINICONDA
-if [ -d "${MINICONDA_HOME}" ]
+if [ -d "${MINICONDA_HOME}/bin" ]
 then
-    echo "Detect that ${MINICONDA_HOME} has been installed before. Skip the installation"
+    echo "Detect that miniconda3 has been installed before (${MINICONDA_HOME}/bin exists). Skip the installation"
 else
     echo "${MINICONDA_HOME} not found. Install it!"
     wget https://repo.anaconda.com/miniconda/Miniconda3-${MINICONDA_VERSION}-Linux-x86_64.sh -O /tmp/Miniconda3-${MINICONDA_VERSION}-Linux-x86_64.sh
@@ -17,4 +17,20 @@ else
 fi
 
 ##########################
-# RUST is already installed, so we skipped
+# INSTALL RUST
+
+export PATH=${TRAVIS_HOME}/.cargo/bin:$PATH
+
+if [ -d "${TRAVIS_HOME}/.cargo/bin" ]
+then
+    echo "Detect that rust has been installed before (${TRAVIS_HOME}/.cargo/bin exists). Skip the installation"
+else
+    curl -sSf https://build.travis-ci.org/files/rustup-init.sh | sh -s -- --default-toolchain=${RUST_VERSION} -y
+fi
+
+# update rust
+rustup update
+# print versions
+rustc --version
+rustup --version
+cargo --version

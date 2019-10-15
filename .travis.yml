@@ -1,8 +1,9 @@
-language: rust
-rust:
-  - stable
+# language: rust
+# rust:
+#   - stable
 env:
   - MINICONDA_VERSION=4.7.10
+  - RUST_VERSION=stable
 cache:
   cargo: true
   pip: true
@@ -13,3 +14,6 @@ install:
 script:
   - echo $PATH
   - pwd
+  - ls ${TRAVIS_HOME}/miniconda3-${MINICONDA_VERSION}
+  - python --version
+  - rustc --version
