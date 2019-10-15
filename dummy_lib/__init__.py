@@ -1,0 +1,1 @@
+import dummy_lib.version import __version__
