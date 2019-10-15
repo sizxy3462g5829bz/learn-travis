@@ -11,7 +11,7 @@ then
     echo "Detect that miniconda3 has been installed before (${MINICONDA_HOME}/bin exists). Skip the installation"
 else
     echo "${MINICONDA_HOME}/bin not found. Install it!"
-    rm -rf ${MINICONDA_HOME}/bin
+    rm -rf ${MINICONDA_HOME}
     wget https://repo.anaconda.com/miniconda/Miniconda3-${MINICONDA_VERSION}-Linux-x86_64.sh -O /tmp/Miniconda3-${MINICONDA_VERSION}-Linux-x86_64.sh
     mkdir ${TRAVIS_HOME}/.conda && sh /tmp/Miniconda3-${MINICONDA_VERSION}-Linux-x86_64.sh -b -p ${MINICONDA_HOME}
     conda install -y gxx_linux-64
