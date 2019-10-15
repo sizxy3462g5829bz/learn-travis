@@ -2,8 +2,7 @@
 # rust:
 #   - stable
 env:
-  - MINICONDA_VERSION=4.7.10
-  - RUST_VERSION=stable
+  - MINICONDA_VERSION=4.7.10 RUST_VERSION=stable
 cache:
   cargo: true
   pip: true
