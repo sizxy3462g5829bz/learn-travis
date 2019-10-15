@@ -18,3 +18,4 @@ script:
   - ls ${TRAVIS_HOME}/miniconda3-${MINICONDA_VERSION}
   - python --version
   - rustc --version
+  - echo hello world
