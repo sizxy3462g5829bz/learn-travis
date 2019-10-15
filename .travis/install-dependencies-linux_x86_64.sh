@@ -1,7 +1,6 @@
 #!/bin/bash
 set -e
 
-export MINICONDA_VERSION=4.7.10
 export MINICONDA_HOME=${TRAVIS_HOME}/miniconda3-${MINICONDA_VERSION}
 export PATH=${TRAVIS_HOME}/miniconda3-${MINICONDA_VERSION}/bin:$PATH
 
