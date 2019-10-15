@@ -1,2 +1,9 @@
+language: rust
+rust:
+  - stable
+cache: cargo
+install:
+  - source .travis/install-dependencies-linux_86_64.sh
 script:
-  - echo hello-world
+  - echo $PATH
+  - pwd
