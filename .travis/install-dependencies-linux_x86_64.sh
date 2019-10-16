@@ -4,7 +4,7 @@ set -e
 export MINICONDA_HOME=${TRAVIS_HOME}/miniconda3-${MINICONDA_VERSION}
 export PATH=${TRAVIS_HOME}/miniconda3-${MINICONDA_VERSION}/bin:$PATH
 
-echo "install dependencies (linux)"
+echo "install dependencies: ${TRAVIS_OS_NAME}"
 
 ##########################
 # INSTALL MINICONDA

@@ -1,3 +1,6 @@
+import sys
+
+print("Platform", sys.platform)
 exec(open("dummy_lib/version.py").read())
 
 with open("dummy_lib/dummy_lib." + __version__ + ".so", "w") as f:
