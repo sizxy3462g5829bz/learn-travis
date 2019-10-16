@@ -1,6 +1,7 @@
 # language: rust
 # rust:
 # - stable
+language: shell
 env:
 - MINICONDA_VERSION=4.7.10 RUST_VERSION=stable
 os:
