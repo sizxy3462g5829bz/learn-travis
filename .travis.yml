@@ -14,7 +14,8 @@ cache:
   # directories:
   # - "${TRAVIS_HOME}/miniconda3-${MINICONDA_VERSION}"
 install:
-  - source .travis/install-dependencies-linux_x86_64.sh
+  # - source .travis/install-dependencies-linux_x86_64.sh
+  - choco install miniconda3
 script:
   - echo $PATH
   # - rustc --version
