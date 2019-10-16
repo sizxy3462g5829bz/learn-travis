@@ -4,7 +4,7 @@ rust:
 env:
 - MINICONDA_VERSION=4.7.10 RUST_VERSION=stable
 os:
-  - linux
+  # - linux
   - osx
   - windows
 cache:
