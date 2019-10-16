@@ -15,10 +15,11 @@ cache:
   # - "${TRAVIS_HOME}/miniconda3-${MINICONDA_VERSION}"
 install:
   # - source .travis/install-dependencies-linux_x86_64.sh
-  - choco install miniconda3
+  - choco install miniconda3 --version ${MINICONDA_VERSION} -y
 script:
   - echo $PATH
   # - rustc --version
+  - ls /c/tools/miniconda3
   - python --version
   - echo hello world
   # - python devel
