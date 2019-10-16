@@ -3,13 +3,15 @@ rust:
 - stable
 env:
 - MINICONDA_VERSION=4.7.10 RUST_VERSION=stable
+os:
+  - osx
 cache:
   cargo: true
   pip: true
   # directories:
   # - "${TRAVIS_HOME}/miniconda3-${MINICONDA_VERSION}"
-# install:
-# - source .travis/install-dependencies-linux_x86_64.sh
+install:
+  - source .travis/install-dependencies-linux_x86_64.sh
 script:
   - echo $PATH
   - rustc --version
