@@ -31,6 +31,8 @@ else
 
     if [ "${TRAVIS_OS_NAME}" = "windows" ]
     then
+        choco install miniconda3 --version ${MINICONDA_VERSION} -y
+        export PATH=/c/tools/miniconda3:$PATH
         # wget https://repo.anaconda.com/miniconda/Miniconda3-${MINICONDA_VERSION}-Windows-x86_64.exe -O /tmp/Miniconda3-${MINICONDA_VERSION}-Windows-x86_64.exe
         # mkdir ${TRAVIS_HOME}/.conda
         #   /tmp/Miniconda3-${MINICONDA_VERSION}-Windows-x86_64.exe -b -p ${MINICONDA_HOME}
