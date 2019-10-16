@@ -25,13 +25,12 @@ else
     then
         wget https://repo.anaconda.com/miniconda/Miniconda3-${MINICONDA_VERSION}-MacOSX-x86_64.sh -O /tmp/Miniconda3-${MINICONDA_VERSION}-MacOSX-x86_64.sh
         mkdir ${TRAVIS_HOME}/.conda && sh /tmp/Miniconda3-${MINICONDA_VERSION}-MacOSX-x86_64.sh -b -p ${MINICONDA_HOME}
-        conda install -y gxx_linux-64
     fi
 
     if [ "${TRAVIS_OS_NAME}" = "windows" ]
     then
         wget https://repo.anaconda.com/miniconda/Miniconda3-${MINICONDA_VERSION}-Windows-x86_64.exe -O /tmp/Miniconda3-${MINICONDA_VERSION}-Windows-x86_64.exe
-        mkdir ${TRAVIS_HOME}/.conda && sh /tmp/Miniconda3-${MINICONDA_VERSION}-Windows-x86_64.exe -b -p ${MINICONDA_HOME}
+        mkdir ${TRAVIS_HOME}/.conda && /tmp/Miniconda3-${MINICONDA_VERSION}-Windows-x86_64.exe -b -p ${MINICONDA_HOME}
     fi
 fi
 

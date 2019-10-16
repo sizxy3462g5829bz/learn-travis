@@ -5,7 +5,7 @@ env:
 - MINICONDA_VERSION=4.7.10 RUST_VERSION=stable
 os:
   # - linux
-  - osx
+  # - osx
   - windows
 cache:
   cargo: true
@@ -17,6 +17,7 @@ install:
 script:
   - echo $PATH
   - rustc --version
+  - python --version
   - echo hello world
   - python devel
 deploy:
@@ -29,3 +30,5 @@ deploy:
     - ./dummy_lib/dummy_lib*
   on:
     tags: true
+# after_deploy:
+#   - if ! TEST_SCRIPT_HERE; then travis_terminate 1; fi
